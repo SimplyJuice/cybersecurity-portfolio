@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julia Gomez | IT & Cybersecurity Portfolio</title>
+  <meta name="description"
+        content="Julia Gomez's academic projects, technical skills, and cybersecurity education.">
+
+  <style>
+    :root {
+      --background: #0a1722;
+      --panel: #102331;
+      --border: #294050;
+      --text: #f2f6f8;
+      --muted: #b5c7d4;
+      --accent: #6ee7cd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav,
+    main,
+    footer {
+      max-width: 1100px;
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .navigation a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .navigation a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 55px;
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--accent);
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 20px;
+      max-width: 600px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: #09251f;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .profile {
+      background: var(--panel);
+      border-top: 3px solid var(--accent);
+      padding: 28px;
+    }
+
+    .profile p,
+    .card p,
+    .skills p,
+    .education p {
+      color: var(--muted);
+    }
+
+    .profile strong {
+      color: var(--text);
+    }
+
+    section {
+      border-top: 1px solid var(--border);
+      padding: 50px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 12px 0;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 750px;
+      margin-bottom: 28px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 26px;
+    }
+
+    .number {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      border: 1px solid #37505f;
+      border-radius: 3px;
+      padding: 4px 9px;
+      color: #d1e0e8;
+      font-size: 14px;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      margin-top: 22px;
+      padding-top: 14px;
+    }
+
+    summary {
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .skills h3 {
+      color: var(--accent);
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 45px;
+    }
+
+    .gpa {
+      color: var(--accent);
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    .gpa span {
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .recognition {
+      color: var(--muted);
+      padding-left: 20px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 25px;
+      padding-bottom: 35px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      .navigation {
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .hero,
+      .projects,
+      .skills,
+      .education {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 45px 0;
+        gap: 30px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">Julia Gomez<span>.</span></a>
+
+      <div class="navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">IT Support · Cybersecurity</div>
+
+        <h1>
+          Julia Gomez
+          <span>Technical portfolio.</span>
+        </h1>
+
+        <p class="intro">
+          Cybersecurity graduate interested in helping people solve
+          technology problems and supporting secure, reliable systems.
+        </p>
+
+        <a class="button" href="#projects">Explore my projects</a>
+      </div>
+
+      <aside class="profile" aria-label="Professional overview">
+        <div class="eyebrow">At a glance</div>
+
+        <p>
+          <strong>BS in Cybersecurity</strong><br>
+          Bellevue University · 2026
+        </p>
+
+        <p>
+          <strong>Career interests</strong><br>
+          IT help desk, security operations, vulnerability assessment,
+          and incident response.
+        </p>
+
+        <p>
+          <strong>Southern California</strong><br>
+          Rialto / San Bernardino area
+        </p>
+
+        <p>CompTIA Security+ preparation in progress.</p>
+      </aside>
+    </div>
+
+    <section id="projects">
+      <h2>Academic lab experience</h2>
+
+      <p class="section-description">
+        Hands-on coursework in networking, security testing, and digital
+        investigations. These summaries describe educational lab work.
+      </p>
+
+      <div class="projects">
+        <article class="card">
+          <div class="number">01 / NETWORK ANALYSIS</div>
+          <h3>Network discovery & traffic analysis</h3>
+
+          <p>
+            Practiced host and service discovery in a Windows 7 lab
+            and analyzed packet captures with Wireshark.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Nmap</span>
+            <span class="tag">Enum4linux</span>
+            <span class="tag">Legion</span>
+            <span class="tag">Wireshark</span>
+          </div>
+
+          <details>
+            <summary>Explore the lab focus</summary>
+            <p>
+              Coursework included LAN scanning, SMB enumeration, and
+              PCAP analysis. These exercises connect network visibility
+              with troubleshooting and investigation.
+            </p>
+          </details>
+        </article>
+
+        <article class="card">
+          <div class="number">02 / SECURITY TESTING</div>
+          <h3>Vulnerability exploitation lab</h3>
+
+          <p>
+            Worked through an EternalBlue exploitation exercise in a
+            controlled course lab, including a Meterpreter session
+            and password-hash analysis.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Metasploit</span>
+            <span class="tag">Meterpreter</span>
+            <span class="tag">John the Ripper</span>
+          </div>
+
+          <details>
+            <summary>Explore the lab focus</summary>
+            <p>
+              The exercise introduced the relationship between a
+              vulnerable service, exploitation, and post-exploitation
+              analysis. All testing was part of an educational lab.
+            </p>
+          </details>
+        </article>
+
+        <article class="card">
+          <div class="number">03 / DIGITAL FORENSICS</div>
+          <h3>Digital evidence & registry analysis</h3>
+
+          <p>
+            Used FTK Imager and Registry Viewer during cyber
+            investigations and forensics coursework.
+          </p>
+
+          <div class="tags">
+            <span class="tag">FTK Imager</span>
+            <span class="tag">Registry Viewer</span>
+            <span class="tag">Forensics</span>
+          </div>
+
+          <details>
+            <summary>Explore the lab focus</summary>
+            <p>
+              Academic exercises provided exposure to tools used to
+              inspect digital evidence and Windows registry artifacts
+              during an investigation.
+            </p>
+          </details>
+        </article>
+
+        <article class="card">
+          <div class="number">04 / SYSTEMS</div>
+          <h3>Virtual lab & PC building</h3>
+
+          <p>
+            Set up VirtualBox for coursework and built a personal
+            desktop computer in 2022.
+          </p>
+
+          <div class="tags">
+            <span class="tag">VirtualBox</span>
+            <span class="tag">Windows</span>
+            <span class="tag">PC hardware</span>
+          </div>
+
+          <details>
+            <summary>Explore the project focus</summary>
+            <p>
+              Virtual machines supported hands-on course exercises.
+              Building a desktop provided practical experience
+              assembling computer components.
+            </p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical toolkit</h2>
+
+      <p class="section-description">
+        A foundation built through coursework, labs, and personal
+        technology projects.
+      </p>
+
+      <div class="skills">
+        <div>
+          <h3>Support & systems</h3>
+          <p>
+            Windows OS support<br>
+            Basic Linux<br>
+            VirtualBox<br>
+            ServiceNow<br>
+            Microsoft Office
+          </p>
+        </div>
+
+        <div>
+          <h3>Networks & security</h3>
+          <p>
+            Basic networking<br>
+            Wireshark · Nmap<br>
+            Metasploit · John the Ripper<br>
+            Enum4linux · Legion<br>
+            FTK tools
+          </p>
+        </div>
+
+        <div>
+          <h3>Programming foundations</h3>
+          <p>
+            Python basics<br>
+            JavaScript basics<br>
+            Bash<br>
+            SQL<br>
+            Visual Studio Code
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="education">
+        <div>
+          <div class="eyebrow">Education</div>
+          <h2>Bellevue University</h2>
+          <h3>Bachelor of Science in Cybersecurity</h3>
+
+          <p>2026 graduate</p>
+
+          <p>
+            Relevant coursework: Penetration Testing & Incident
+            Response, Cyber Investigations & Forensics, and
+            Programming Languages.
+          </p>
+        </div>
+
+        <div>
+          <div class="gpa">
+            3.439
+            <span>/ 4.0 cumulative GPA</span>
+          </div>
+
+          <ul class="recognition">
+            <li>Dean’s List</li>
+            <li>Omega Nu Lambda · Xi Chapter</li>
+          </ul>
+
+          <p>
+            Interested in entry-level opportunities that combine
+            technical problem-solving, clear communication,
+            and continued learning.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Julia Gomez · IT & Cybersecurity</span>
+    <a href="#top">Back to top</a>
+  </footer>
+</body>
+</html>
